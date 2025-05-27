@@ -28,7 +28,7 @@ VarTransAI 是一个 VSCode 插件，它使用 AI 技术帮助开发者将中文
    - 输入对应的 API Key
    - 选择要使用的模型名称
 
-![设置页面](截屏2025-05-27%2010.43.12.png)
+![设置页面](https://github.com/M4rtinnnnnn/var-trans-ai/blob/main/setting.png?raw=true)
 
 ### 使用插件
 
@@ -37,9 +37,13 @@ VarTransAI 是一个 VSCode 插件，它使用 AI 技术帮助开发者将中文
 
 ### 操作演示
 
+![使用前](https://github.com/M4rtinnnnnn/var-trans-ai/blob/main/before.png?raw=true)
+
+![使用后](https://github.com/M4rtinnnnnn/var-trans-ai/blob/main/after.png?raw=true)
+
 观看下面的视频了解如何使用插件：
 
-https://github.com/user-attachments/assets/录屏2025-05-27%2010.48.33.mov
+https://github.com/M4rtinnnnnn/var-trans-ai/blob/main/screen.mov
 
 ## 配置选项
 

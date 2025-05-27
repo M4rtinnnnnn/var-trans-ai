@@ -3,6 +3,7 @@
   "displayName": "VarTransAI",
   "description": "AI-powered variable name translation from Chinese (or other languages) to English",
   "version": "0.0.3",
+  "publisher": "M4rtinnnnnn",
   "icon": "icon.jpg",
   "repository": "https://github.com/M4rtinnnnnn/var-trans-ai.git",
   "engines": {
