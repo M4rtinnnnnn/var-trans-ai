@@ -6,8 +6,8 @@ let translateService: TranslateService;
 export function activate(context: vscode.ExtensionContext) {
     try {
         translateService = new TranslateService();
-    } catch (error) {
-        vscode.window.showWarningMessage('Please configure your API key in settings');
+    } catch (error: any) {
+        vscode.window.showWarningMessage(error.message);
         return;
     }
 

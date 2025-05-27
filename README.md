@@ -18,6 +18,8 @@ VarTransAI 是一个 VSCode 插件，它使用 AI 技术帮助开发者将中文
 
 ## 使用方法
 
+### 配置设置
+
 1. 在 VSCode 中安装插件
 2. 在设置中配置你的 AI 模型：
    - 打开 VSCode 设置
@@ -25,8 +27,19 @@ VarTransAI 是一个 VSCode 插件，它使用 AI 技术帮助开发者将中文
    - 选择模型提供商（OpenAI/Anthropic/OpenAI Completion API）
    - 输入对应的 API Key
    - 选择要使用的模型名称
+
+![设置页面](截屏2025-05-27%2010.43.12.png)
+
+### 使用插件
+
 3. 在代码中选择要翻译的变量名
 4. 使用快捷键（Windows/Linux: Ctrl+Shift+T, Mac: Cmd+Shift+T）或右键菜单选择 "Translate Variable Name"
+
+### 操作演示
+
+观看下面的视频了解如何使用插件：
+
+https://github.com/user-attachments/assets/录屏2025-05-27%2010.48.33.mov
 
 ## 配置选项
 
@@ -57,4 +70,4 @@ VarTransAI 是一个 VSCode 插件，它使用 AI 技术帮助开发者将中文
 
 ## 许可证
 
-MIT 
+MIT

@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
-import { createOpenAI } from '@ai-sdk/openai';
-import { createAnthropic } from '@ai-sdk/anthropic';
+import { createOpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { generateText, LanguageModelV1 } from "ai";
 
@@ -35,20 +35,21 @@ export class TranslateService {
         this.model = createOpenAI({
           apiKey,
           ...modelConfig,
-        })(modelName)
+        })(modelName);
         break;
       case "anthropic":
         this.model = createAnthropic({
           apiKey,
           ...modelConfig,
-        })(modelName)
+        })(modelName);
         break;
-      case "openai-compatible":
+      case "openai-api-compatible":
         this.model = createOpenAICompatible({
           apiKey,
           baseURL: baseUrl,
-         ...modelConfig,
+          ...modelConfig,
         }).chatModel(modelName);
+        break;
       default:
         throw new Error(`Unsupported model provider: ${provider}`);
     }
@@ -63,53 +64,53 @@ export class TranslateService {
       throw new Error("Model not initialized");
     }
 
-    let guidelines = '';
-    
+    let guidelines = "";
+
     switch (language) {
-        case 'javascript':
-        case 'typescript':
-            guidelines = `
+      case "javascript":
+      case "typescript":
+        guidelines = `
             - Variables/functions: camelCase
             - Constants: UPPER_SNAKE_CASE
             - Classes: PascalCase
             - Private members: _camelCase prefix
             `;
-            break;
-        case 'python':
-            guidelines = `
+        break;
+      case "python":
+        guidelines = `
             - Variables/functions: snake_case
             - Constants: UPPER_SNAKE_CASE
             - Classes: PascalCase
             - Private members: _snake_case prefix
             `;
-            break;
-        case 'java':
-            guidelines = `
+        break;
+      case "java":
+        guidelines = `
             - Variables/methods: camelCase
             - Constants: UPPER_SNAKE_CASE
             - Classes/interfaces: PascalCase
             - Packages: lowercase
             `;
-            break;
-        case 'go':
-            guidelines = `
+        break;
+      case "go":
+        guidelines = `
             - Variables/functions: camelCase (exported: PascalCase)
             - Constants: camelCase or PascalCase
             - Packages: lowercase
             `;
-            break;
-        case 'rust':
-            guidelines = `
+        break;
+      case "rust":
+        guidelines = `
             - Variables/functions: snake_case
             - Constants: UPPER_SNAKE_CASE
             - Types/traits: PascalCase
             - Modules: snake_case
             `;
-            break;
-        default:
-            guidelines = 'No specific guidelines available for this language.';
+        break;
+      default:
+        guidelines = "No specific guidelines available for this language.";
     }
-    
+
     const prompt = `
         You are a programming assistant that helps translate variable names from Chinese to English.
     
